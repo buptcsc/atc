@@ -1,4 +1,4 @@
-The ATC is an identity-based data group sharing and dissemination scheme in public cloud, in which data owner could broadcast encrypted data to a group of receivers at one time by specifying these receivers’ identities, and data disseminators whose attributes satisfy the access policy of encrypted data could disseminate the data to other groups after the releasing time. The prototype provides a number of command line tools as follows:
+The ATC is an identity-based data group sharing and dissemination scheme in public cloud, in which data owner could broadcast encrypted data to a group of receivers at one time by specifying these receivers’ identities, and data disseminator whose attributes satisfy the access policy of encrypted data could disseminate the data to other groups after the releasing time. The prototype provides a number of command line tools as follows:
 
 $ atc-setup
 
