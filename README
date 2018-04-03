@@ -1,0 +1,19 @@
+The ATC is an identity-based data group sharing and dissemination scheme in public cloud, in which data owner could broadcast encrypted data to a group of receivers at one time by specifying these receivers’ identities, and data disseminators whose attributes satisfy the access policy of encrypted data could disseminate the data to other groups after the releasing time. The prototype provides a number of command line tools as follows:
+
+$ atc-setup
+
+$ atc-keygen -o a_priv_key pub_key master_key 1@mail.com department senior manager
+$ atc-keygen -o b_priv_key pub_key master_key 2@mail.com department director
+& atc-keygen -o c_priv_key pub_key master_key 12@mail.com department junior manager
+
+$ atc-tokengen -o token_key pub_key master_key 2018-01-18
+
+$ atc-enc pub_key 1.png 'department and director|2018-01-18' 1@mail.com 2@mail.com 3@mail.com 4@mail.com 5@mail.com
+
+$ atc-dec1 pub_key a_priv_key 1@mail.com 1.png.enc
+
+$ atc-rekeygen pub_key b_priv_key -o b_re_key 2@mail.com 11@mail.com 12@mail.com 13@mail.com 14@mail.com 15@mail.com
+
+$ atc-reenc pub_key b_re_key token_key 2@mail.com 1.png.enc
+
+$ atc-dec2 pub_key c_priv_key 12@mail.com 1.png.enc.rec
